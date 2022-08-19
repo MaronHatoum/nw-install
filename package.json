@@ -1,0 +1,81 @@
+{
+  "name": "nnw-install",
+  "version": "0.0.0",
+  "description": "Install NW",
+  "author": "Ayushman Chhabra <ayushmxn@outlook.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "homepage": "https://github.com/ayushmxn/nw-install",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayushmxn/nw-install.git"
+  },
+  "scripts": {
+    "format": "prettier --write ./src/**/*",
+    "lint": "eslint ./src/**/*.ts",
+    "build": "tsup src/index.ts --minify --format cjs,esm --dts --clean",
+    "test": "jest"
+  },
+  "keywords": [
+    "nw",
+    "node-webkit"
+  ],
+
+  "devDependencies": {
+    "@types/jest": "28.1.7",
+    "@types/node": "18.7.6",
+    "@typescript-eslint/parser": "5.33.1",
+    "eslint": "8.22.0",
+    "jest": "28.1.3",
+    "jest-environment-jsdom": "28.1.3",
+    "jsdom": "20.0.0",
+    "prettier": "2.7.1",
+    "ts-jest": "28.0.8",
+    "tsup": "6.2.2",
+    "typescript": "4.7.4"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "transform": {
+      ".+\\.ts?$": "ts-jest"
+    },
+    "testEnvironment": "jsdom"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "consistent",
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "arrowParens": "always",
+    "proseWrap": "preserve",
+    "htmlWhitespaceSensitivity": "strict",
+    "endOfLine": "lf",
+    "singleAttributePerLine": true
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
+    "env": {
+      "es6": true,
+      "browser": true
+    },
+    "parser": "@typescript-eslint/parser"
+  }
+}
