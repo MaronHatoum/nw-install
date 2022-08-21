@@ -10,6 +10,6 @@
     {
       "matchDepTypes": ["devDependencies"],
       "automerge": true
-    },
+    }
   ]
 }
